@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dark Web Monitor — India First</title>
+  <meta name="description" content="India-first dark web monitor: check if your email/phone is leaked, get alerts and simple steps to fix." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#101722;
+      --panel-2:#0e1420;
+      --text:#e8f0ff;
+      --muted:#96a2b8;
+      --primary:#00e0ff;
+      --danger:#ff3657;
+      --accent:#ff2255;
+      --ok:#00d18f;
+      --card:#111827cc;
+      --ring:0 0 0 2px rgba(0,224,255,.25),0 0 40px rgba(0,224,255,.18);
+      --grid:radial-gradient(transparent 0 2px, #0c1320 2px) 0 0/18px 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;background:linear-gradient(180deg,#080b12,#0a101a 40%,#0b1120) fixed;
+      color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+    }
+    a{color:var(--primary);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;backdrop-filter:saturate(120%) blur(6px);
+      background:linear-gradient(180deg,rgba(8,12,20,.85),rgba(8,12,20,.55));
+      border-bottom:1px solid rgba(255,255,255,.06); z-index:10;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .brand-badge{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 200deg, #ff2a6f, #0ff);box-shadow:0 0 20px #ff2a6f66 inset}
+    .cta{padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,#0ff,#6df);color:#001018;font-weight:700;border:none;cursor:pointer}
+    .cta.outline{background:transparent;border:1px solid #1f2b3f;color:var(--text)}
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;
+      padding:72px 0 56px;border-bottom:1px solid rgba(255,255,255,.06);
+      background-image:
+        radial-gradient(1200px 500px at 80% -10%, rgba(0,224,255,.12), transparent 60%),
+        radial-gradient(800px 400px at 10% 0%, rgba(255,34,85,.18), transparent 60%),
+        linear-gradient(180deg, transparent, rgba(0,0,0,.2)),
+        var(--grid);
+    }
+    .glow{position:absolute;inset:-20% -10% auto -10%;height:70vh;pointer-events:none;opacity:.35;filter:blur(40px);
+      background:radial-gradient(closest-side,#ff2a6f22,transparent 60%), radial-gradient(closest-side,#00e0ff22,transparent 60%)}
+    .hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    @media (max-width:900px){.hero-wrap{grid-template-columns:1fr}}
+    .eyebrow{font-family:"JetBrains Mono",monospace;color:var(--primary);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+    h1{font-size:42px;line-height:1.15;margin:10px 0 8px}
+    .sub{color:var(--muted);max-width:52ch}
+    .lookup{
+      margin:22px 0;display:flex;gap:10px;background:linear-gradient(180deg,#0b1320,#0b1526);
+      padding:10px;border-radius:14px;border:1px solid #192235;box-shadow:var(--ring)
+    }
+    .field{flex:1;background:#0b1120;border:1px solid #1b2740;color:var(--text);padding:14px 14px;border-radius:10px;font-family:"JetBrains Mono",monospace}
+    .select{background:#0b1120;border:1px solid #1b2740;color:var(--muted);padding:14px;border-radius:10px}
+    .btn{padding:14px 18px;border-radius:10px;border:none;background:linear-gradient(90deg,#ff2255,#ff6a3a);color:#fff;font-weight:800;letter-spacing:.3px;cursor:pointer}
+    .trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;color:#7f8aa3;font-size:13px}
+    /* Cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px}
+    .card h3{margin:4px 0 6px}
+    .badge{font-family:"JetBrains Mono",monospace;color:#9adffe;font-size:12px}
+    /* Pricing */
+    .pricing{background:linear-gradient(180deg,#0a0f17,#0a111d);padding:38px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:900px){.plans{grid-template-columns:1fr}}
+    .plan{background:var(--panel);border:1px solid #1a2436;border-radius:14px;padding:18px}
+    .plan h4{margin:0 0 6px}
+    .price{font-size:28px;font-weight:800}
+    ul{padding-left:18px;margin:10px 0}
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06);color:#8793aa;padding:26px 0;background:linear-gradient(180deg,#0a1018,#08101a)}
+    /* Demo state */
+    .status{margin-top:10px;font-family:"JetBrains Mono",monospace}
+    .ok{color:var(--ok)} .bad{color:var(--danger)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-badge"></span> Dark Web Monitor</div>
+      <div style="display:flex;gap:10px">
+        <a class="cta outline" href="#how">How it works</a>
+        <a class="cta" href="#start">Start Monitoring</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="start">
+    <div class="glow"></div>
+    <div class="container hero-wrap">
+      <div>
+        <div class="eyebrow">India‑first • हिंदी में</div>
+        <h1>Is your data safe or leaked?</h1>
+        <p class="sub">Email/Phone डालें — तुरंत बताएँगे कहाँ और कब लीक हुआ, और क्या करना है. कोई raw Aadhaar/PAN सेव नहीं—tokenized matching only.</p>
+        <form class="lookup" onsubmit="return demoLookup(event)">
+          <select class="select" id="type">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="username">Username</option>
+          </select>
+          <input class="field" id="identity" placeholder="e.g. alice@example.com" required />
+          <button class="btn" type="submit">Check breach status</button>
+        </form>
+        <div id="result" class="status"></div>
+        <div class="trust">
+          <span>Consent‑only checks</span> •
+          <span>No raw Aadhaar/PAN storage</span> •
+          <span>Tokenized matching</span>
+        </div>
+      </div>
+      <div>
+        <div class="cards">
+          <div class="card">
+            <div class="badge">Feature</div>
+            <h3>Instant lookup</h3>
+            <p>ईमेल/फ़ोन/यूज़रनेम पर तुरंत breach status व details.</p>
+          </div>
+          <div class="card">
+            <div class="badge">Feature</div>
+            <h3>Smart alerts</h3>
+            <p>नई leak में दिखते ही push/mail alerts व severity score.</p>
+          </div>
+          <div class="card">
+            <div class="badge">Feature</div>
+            <h3>Fix steps</h3>
+            <p>2FA, पासवर्ड reset, UPI/card block—सब step‑by‑step.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="container">
+    <h2>How it works</h2>
+    <div class="cards">
+      <div class="card"><h3>1) Enter identity</h3><p>हम normalize + hash करते हैं; matching tokens से होता है.</p></div>
+      <div class="card"><h3>2) We check leaks</h3><p>कानूनी OSINT/लाइसेंस्ड feeds से curated breach corpus.</p></div>
+      <div class="card"><h3>3) You take action</h3><p>गाइडेड remediation और भविष्य के alerts.</p></div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="container">
+      <h2>Plans</h2>
+      <div class="plans">
+        <div class="plan">
+          <h4>Basic</h4>
+          <div class="price">₹99/mo</div>
+          <ul>
+            <li>1 identity monitoring</li>
+            <li>Alerts + fix steps</li>
+          </ul>
+          <a class="cta" href="#">Get started</a>
+        </div>
+        <div class="plan" style="border-color:#2c3f62; box-shadow:0 0 0 1px #2c3f62 inset;">
+          <h4>Family</h4>
+          <div class="price">₹199/mo</div>
+          <ul>
+            <li>5 identities</li>
+            <li>Shared dashboard</li>
+          </ul>
+          <a class="cta" href="#">Choose Family</a>
+        </div>
+        <div class="plan">
+          <h4>Corporate</h4>
+          <div class="price">Custom</div>
+          <ul>
+            <li>Per‑employee monitoring</li>
+            <li>CSV/API • SLA reports</li>
+          </ul>
+          <a class="cta" href="#">Talk to sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div>© 2025 Dark Web Monitor • Privacy‑first • Made in India</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Disclosure</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Demo-only lookup logic (placeholder). Replace with real API call.
+    function demoLookup(e){
+      e.preventDefault();
+      const val=document.getElementById('identity').value.trim();
+      const res=document.getElementById('result');
+      if(!val){res.textContent='कृपया मान्य इनपुट दर्ज करें.';return false;}
+      const leaked = /test|123|demo|alice|bob|@gmail\.com/i.test(val) || Math.random()>.55;
+      if(leaked){
+        res.innerHTML = 'Result: <span class="bad">Leaked</span> — Source: example.com (2023) • Fields: password, phone';
+      }else{
+        res.innerHTML = 'Result: <span class="ok">No known leaks</span> — हम नए लीक पर आपको अपडेट करेंगे.';
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
 
