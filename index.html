@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============ Basic SEO ============ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shiv Milk Product — Pure • Fresh • Hygienic</title>
+  <meta name="description" content="Shiv Milk Product brings farm-fresh milk, paneer, ghee & curd with hygiene, quality and fair pricing. Explore our pure dairy range." />
+  <link rel="icon" href="assets/logo.png" />
+
+  <!-- ============ Open Graph ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shiv Milk Product — Pure • Fresh • Hygienic" />
+  <meta property="og:description" content="Farm-fresh milk & dairy products, delivered with purity." />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta property="og:url" content="https://your-username.github.io/your-repo/" />
+
+  <!-- ============ Tailwind CSS (CDN) ============ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#f2f9f5',
+              100: '#e4f3ea',
+              200: '#c4e6d2',
+              300: '#96d2b3',
+              400: '#5ab98c',
+              500: '#2b9f6c',   /* primary green */
+              600: '#1f8a5c',
+              700: '#166c48',
+              800: '#11533a',
+              900: '#0e4230'
+            },
+            accent: '#910f3f'  /* subtle deep rose accent (CTA etc.) */
+          },
+          fontFamily: {
+            display: ['ui-sans-serif','system-ui','Segoe UI','Inter','Roboto','Arial'],
+            body: ['Inter','system-ui','Segoe UI','Roboto','Arial']
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(0,0,0,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ============ AOS (scroll animations) ============ -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <!-- ============ Swiper (Hero Slider) ============ -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+
+  <!-- ============ Minimal base styles ============ -->
+  <style>
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.6); }
+    .card-hover { transition: transform .35s ease, box-shadow .35s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 45px rgba(0,0,0,.12); }
+    .section { scroll-margin-top: 90px; }
+  </style>
+
+  <!-- ============ JSON-LD ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Shiv Milk Product",
+    "image": "https://your-domain/assets/og-cover.jpg",
+    "description": "Farm-fresh milk, paneer, ghee & curd with hygiene and quality.",
+    "url": "https://your-username.github.io/your-repo/",
+    "telephone": "+91-9876543210",
+    "address": { "@type": "PostalAddress", "addressCountry": "IN" }
+  }
+  </script>
+</head>
+<body class="font-body text-brand-900 bg-brand-50/40">
+  <!-- ============ Top Announcement Bar ============ -->
+  <div class="w-full bg-brand-700 text-white text-center text-sm py-2">
+    Pure • Fresh • Hygienic — Delivering dairy you can trust 🥛
+  </div>
+
+  <!-- ============ Navbar ============ -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Shiv Milk Product" class="h-9 w-9 rounded-xl shadow" />
+        <span class="font-display font-extrabold tracking-tight text-brand-800 text-xl">Shiv Milk Product</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#home" class="hover:text-brand-600">Home</a>
+        <a href="#products" class="hover:text-brand-600">Products</a>
+        <a href="#story" class="hover:text-brand-600">Our Story</a>
+        <a href="#quality" class="hover:text-brand-600">Quality</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+      </nav>
+      <a href="#contact" class="hidden sm:inline-flex bg-accent text-white px-4 py-2 rounded-xl shadow hover:opacity-95">Enquire</a>
+    </div>
+  </header>
+
+  <!-- ============ Hero Slider ============ -->
+  <section id="home" class="section relative">
+    <div class="swiper h-[78vh]">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide relative">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop" alt="Fresh milk background">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-black/10"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-6" data-aos="fade-up">
+              <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Pure. Fresh. Healthy.</h1>
+              <p class="mt-4 text-lg md:text-xl opacity-90 max-w-2xl mx-auto">Farm-fresh dairy products, crafted with hygiene & care.</p>
+              <div class="mt-8 flex items-center justify-center gap-4">
+                <a href="#products" class="bg-white text-brand-800 px-6 py-3 rounded-xl font-semibold shadow hover:shadow-lg">Explore Products</a>
+                <a href="#quality" class="glass text-white px-6 py-3 rounded-xl font-semibold border border-white/50">Our Quality</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide relative">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1617196039967-4d91e97a69b8?q=80&w=1600&auto=format&fit=crop" alt="Ghee">
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-6" data-aos="fade-up">
+              <h2 class="text-4xl md:text-5xl font-extrabold">Golden Desi Ghee</h2>
+              <p class="mt-3 text-lg opacity-90">Slow-cooked goodness from pure butter.</p>
+              <a href="#products" class="mt-6 inline-block bg-accent px-6 py-3 rounded-xl font-semibold shadow hover:shadow-lg">Shop Range</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide relative">
+          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1626205744260-ecb54f058fd6?q=80&w=1600&auto=format&fit=crop" alt="Paneer">
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-6" data-aos="fade-up">
+              <h2 class="text-4xl md:text-5xl font-extrabold">Soft & Fresh Paneer</h2>
+              <p class="mt-3 text-lg opacity-90">Protein-rich, everyday staple—done right.</p>
+              <a href="#contact" class="mt-6 inline-block bg-white text-brand-800 px-6 py-3 rounded-xl font-semibold shadow hover:shadow-lg">Bulk Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider controls -->
+      <div class="swiper-pagination !bottom-4"></div>
+      <div class="swiper-button-prev !text-white"></div>
+      <div class="swiper-button-next !text-white"></div>
+    </div>
+  </section>
+
+  <!-- ============ USPs / Badges ============ -->
+  <section class="py-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="card-hover bg-brand-50 rounded-2xl p-5 text-center" data-aos="fade-up">
+        <p class="font-semibold">Farm Fresh</p>
+        <p class="text-sm text-brand-700/80">Sourced daily</p>
+      </div>
+      <div class="card-hover bg-brand-50 rounded-2xl p-5 text-center" data-aos="fade-up" data-aos-delay="100">
+        <p class="font-semibold">Hygienic</p>
+        <p class="text-sm text-brand-700/80">Handled with care</p>
+      </div>
+      <div class="card-hover bg-brand-50 rounded-2xl p-5 text-center" data-aos="fade-up" data-aos-delay="200">
+        <p class="font-semibold">Quality Tested</p>
+        <p class="text-sm text-brand-700/80">Every batch</p>
+      </div>
+      <div class="card-hover bg-brand-50 rounded-2xl p-5 text-center" data-aos="fade-up" data-aos-delay="300">
+        <p class="font-semibold">Fair Pricing</p>
+        <p class="text-sm text-brand-700/80">Value for money</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Products Grid ============ -->
+  <section id="products" class="section py-20 bg-brand-50/60">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-10">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-800" data-aos="fade-right">Our Products</h3>
+        <a href="#contact" class="hidden md:inline text-accent font-semibold hover:opacity-90" data-aos="fade-left">Wholesale Enquiry →</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <article class="bg-white rounded-2xl shadow-soft overflow-hidden card-hover" data-aos="zoom-in">
+          <img src="https://images.unsplash.com/photo-1585238342028-4cbc2de3dbd5?q=80&w=1200&auto=format&fit=crop" class="h-44 w-full object-cover" alt="Milk">
+          <div class="p-5">
+            <h4 class="font-bold text-lg text-brand-800">Fresh Cow Milk</h4>
+            <p class="text-sm text-brand-700/80 mt-1">Creamy, nutrient-rich, daily fresh.</p>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="bg-white rounded-2xl shadow-soft overflow-hidden card-hover" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1626205744260-ecb54f058fd6?q=80&w=1200&auto=format&fit=crop" class="h-44 w-full object-cover" alt="Paneer">
+          <div class="p-5">
+            <h4 class="font-bold text-lg text-brand-800">Organic Paneer</h4>
+            <p class="text-sm text-brand-700/80 mt-1">Soft, fresh & protein-rich.</p>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="bg-white rounded-2xl shadow-soft overflow-hidden card-hover" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1617196039967-4d91e97a69b8?q=80&w=1200&auto=format&fit=crop" class="h-44 w-full object-cover" alt="Ghee">
+          <div class="p-5">
+            <h4 class="font-bold text-lg text-brand-800">Desi Ghee</h4>
+            <p class="text-sm text-brand-700/80 mt-1">Golden aroma, slow-cooked.</p>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="bg-white rounded-2xl shadow-soft overflow-hidden card-hover" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1604908554027-137afda0b29d?q=80&w=1200&auto=format&fit=crop" class="h-44 w-full object-cover" alt="Curd">
+          <div class="p-5">
+            <h4 class="font-bold text-lg text-brand-800">Fresh Curd</h4>
+            <p class="text-sm text-brand-700/80 mt-1">Thick & naturally set.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Brand Story ============ -->
+  <section id="story" class="section py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+      <div data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1587049352851-8d7e4e2b9a28?q=80&w=1400&auto=format&fit=crop" class="rounded-3xl shadow-soft" alt="Farm">
+      </div>
+      <div data-aos="fade-left">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-800">A Simple Idea. A Fresh Promise.</h3>
+        <p class="mt-4 text-brand-800/80 leading-relaxed">
+          We started Shiv Milk Product to bring back the trust in everyday dairy—fresh sourcing, hygienic handling, and transparent quality. From farm to table, we care at every step.
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="bg-brand-50 p-4 rounded-xl">Daily sourcing</div>
+          <div class="bg-brand-50 p-4 rounded-xl">Cold chain delivery</div>
+          <div class="bg-brand-50 p-4 rounded-xl">Batch testing</div>
+          <div class="bg-brand-50 p-4 rounded-xl">Fair pricing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Quality Section ============ -->
+  <section id="quality" class="section py-20 bg-brand-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-1" data-aos="fade-up">
+        <h3 class="text-3xl md:text-4xl font-extrabold">Quality You Can Taste</h3>
+        <p class="mt-3 text-white/80">Every batch is tested for purity, handled in hygienic facilities, and delivered fresh.</p>
+        <a href="#contact" class="inline-block mt-6 bg-white text-brand-800 px-6 py-3 rounded-xl font-semibold shadow hover:shadow-lg">Partner with us</a>
+      </div>
+      <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
+        <div class="glass rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="font-bold text-xl">Purity Checks</h4>
+          <p class="text-white/80 mt-2">Adulteration tests & lactometer checks.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="150">
+          <h4 class="font-bold text-xl">Cold Chain</h4>
+          <p class="text-white/80 mt-2">Low-temperature handling for freshness.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="font-bold text-xl">Hygienic Facilities</h4>
+          <p class="text-white/80 mt-2">Sanitized equipment & staff protocols.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="250">
+          <h4 class="font-bold text-xl">Traceability</h4>
+          <p class="text-white/80 mt-2">Batch-wise records & transparency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Testimonials ============ -->
+  <section class="py-20 bg-brand-50/60">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-brand-800 mb-10" data-aos="fade-right">What People Say</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <blockquote class="bg-white rounded-2xl p-6 shadow-soft card-hover" data-aos="zoom-in">
+          <p class="text-brand-800/90">“Milk quality is superb. You can feel the freshness.”</p>
+          <div class="mt-4 text-sm text-brand-700/80">— Local Café</div>
+        </blockquote>
+        <blockquote class="bg-white rounded-2xl p-6 shadow-soft card-hover" data-aos="zoom-in" data-aos-delay="100">
+          <p class="text-brand-800/90">“Paneer is soft and consistent, our chefs love it.”</p>
+          <div class="mt-4 text-sm text-brand-700/80">— Restaurant Partner</div>
+        </blockquote>
+        <blockquote class="bg-white rounded-2xl p-6 shadow-soft card-hover" data-aos="zoom-in" data-aos-delay="200">
+          <p class="text-brand-800/90">“Ghee aroma took me back to childhood.”</p>
+          <div class="mt-4 text-sm text-brand-700/80">— Home Customer</div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
+      <h3 class="text-3xl md:text-4xl font-extrabold text-brand-800">Let’s Bring Purity to More Plates</h3>
+      <p class="mt-3 text-brand-800/80">Retail, HORECA, institutions, or bulk—partner with us for consistent quality.</p>
+      <a href="#contact" class="inline-block mt-6 bg-accent text-white px-8 py-3 rounded-xl font-semibold shadow hover:shadow-lg">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ============ Contact ============ -->
+  <section id="contact" class="section py-20 bg-brand-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10">
+      <div data-aos="fade-right">
+        <h3 class="text-3xl md:text-4xl font-extrabold">Contact Us</h3>
+        <p class="mt-3 text-white/80">We’d love to hear from you. For orders, partnerships or distributor enquiries:</p>
+        <div class="mt-6 space-y-2 text-white/90">
+          <p>📍 Location: Your City, India</p>
+          <p>📞 Phone: +91-9876543210</p>
+          <p>✉️ Email: info@shivmilkproduct.com</p>
+        </div>
+      </div>
+      <form class="glass rounded-2xl p-6 border border-white/10" data-aos="fade-left" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you.');">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input class="w-full rounded-xl p-3 text-brand-900" type="text" placeholder="Full Name" required>
+          <input class="w-full rounded-xl p-3 text-brand-900" type="tel" placeholder="Phone" required>
+        </div>
+        <input class="w-full rounded-xl p-3 mt-4 text-brand-900" type="email" placeholder="Email" required>
+        <textarea class="w-full rounded-xl p-3 mt-4 text-brand-900" rows="4" placeholder="Your message"></textarea>
+        <button class="mt-5 w-full bg-white text-brand-900 font-semibold py-3 rounded-xl shadow hover:shadow-lg">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Logo" class="h-8 w-8 rounded-lg" />
+        <p class="text-sm text-brand-700/80">© 2025 Shiv Milk Product • All rights reserved</p>
+      </div>
+      <div class="text-sm text-brand-700/80">
+        Crafted with ❤️ | Hygiene • Quality • Fair Pricing
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ Scripts ============ -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      speed: 900
+    });
+  </script>
+</body>
+</html>
